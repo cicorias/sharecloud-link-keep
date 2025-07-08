@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useKV } from '@github/spark/hooks'
-import { Link as LinkIcon, Plus, DotsThree, MagnifyingGlass, Share, Tag, Trash } from '@phosphor-icons/react'
+import { Link as LinkIcon, Plus, DotsThree, MagnifyingGlass, Share, Tag, Trash, DesktopTower } from '@phosphor-icons/react'
 import { Toaster, toast } from 'sonner'
+import { APIRouter } from './api/routes'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -141,6 +142,9 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen max-h-screen bg-background overflow-hidden">
+      {/* API Router - handles API requests from browser extension */}
+      <APIRouter />
+      
       {/* Header */}
       <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-3">
         <div className="container flex items-center justify-between px-4 md:px-6">
@@ -313,6 +317,112 @@ function App() {
           
           <DialogFooter>
             <Button variant="outline" className="w-full">Done</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      
+      {/* Browser Extension Dialog */}
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="fixed bottom-4 left-4 rounded-full shadow-lg"
+          >
+            <DesktopTower size={18} className="mr-2" />
+            Desktop Extension
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>LinkVault Browser Extension</DialogTitle>
+            <DialogDescription>
+              Save links directly from your desktop browser
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="my-4 space-y-4">
+            <div className="bg-muted/50 rounded-md p-4">
+              <h4 className="font-medium mb-2">Key Features</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start">
+                  <div className="mr-2 mt-0.5 rounded-full bg-primary/20 p-1">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  Save links with a single click or keyboard shortcut
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-2 mt-0.5 rounded-full bg-primary/20 p-1">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  Organize links with categories directly from the extension
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-2 mt-0.5 rounded-full bg-primary/20 p-1">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  Automatic sync between desktop and mobile
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-medium mb-2">Available For</h4>
+              <div className="flex flex-wrap gap-2">
+                <a 
+                  href="#chrome" 
+                  className="inline-flex items-center px-3 py-2 bg-card border border-border rounded-md text-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast.info("Chrome extension download would start here");
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                    <circle cx="12" cy="12" r="10" fill="#DB4437" stroke="none" />
+                    <circle cx="12" cy="12" r="4" fill="white" stroke="none" />
+                  </svg>
+                  Chrome
+                </a>
+                <a 
+                  href="#firefox" 
+                  className="inline-flex items-center px-3 py-2 bg-card border border-border rounded-md text-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast.info("Firefox extension download would start here");
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                    <circle cx="12" cy="12" r="10" fill="#FF9400" stroke="none" />
+                    <circle cx="12" cy="12" r="4" fill="white" stroke="none" />
+                  </svg>
+                  Firefox
+                </a>
+                <a 
+                  href="#edge" 
+                  className="inline-flex items-center px-3 py-2 bg-card border border-border rounded-md text-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast.info("Edge extension download would start here");
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                    <circle cx="12" cy="12" r="10" fill="#0078D7" stroke="none" />
+                    <circle cx="12" cy="12" r="4" fill="white" stroke="none" />
+                  </svg>
+                  Edge
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <DialogFooter>
+            <Button variant="outline" className="w-full">Close</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

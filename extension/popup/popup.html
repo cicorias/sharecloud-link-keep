@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkVault</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="logo-icon">
+          <path d="M9 2H5a2 2 0 00-2 2v4a2 2 0 002 2h4a2 2 0 002-2V4a2 2 0 00-2-2zM19 2h-4a2 2 0 00-2 2v4a2 2 0 002 2h4a2 2 0 002-2V4a2 2 0 00-2-2zM9 12H5a2 2 0 00-2 2v4a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2zM19 12h-4a2 2 0 00-2 2v4a2 2 0 002 2h4a2 2 0 002-2v-4a2 2 0 00-2-2z" fill="currentColor" />
+        </svg>
+        <h1>LinkVault</h1>
+      </div>
+      <button id="open-app" class="icon-button" title="Open Web App">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="current-page">
+      <div class="page-info">
+        <img id="page-favicon" src="" alt="" class="favicon">
+        <div>
+          <h2 id="page-title"></h2>
+          <p id="page-url" class="url"></p>
+        </div>
+      </div>
+      <button id="save-link" class="primary-button">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M17 21v-8H7v8M7 3v5h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+        Save to LinkVault
+      </button>
+    </div>
+
+    <div class="categories">
+      <h3>Add to Category</h3>
+      <div class="category-list" id="category-list">
+        <!-- Categories will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <div class="recent-links">
+      <h3>Recent Links</h3>
+      <div class="links-list" id="recent-links">
+        <!-- Recent links will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <div class="sync-status">
+      <div id="sync-indicator" class="sync-indicator"></div>
+      <span id="sync-text">Synced with mobile app</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

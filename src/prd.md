@@ -1,27 +1,28 @@
-# LinkVault - iOS Share Link Capture App
+# LinkVault - Cross-platform Link Capture & Organization System
 
 ## Core Purpose & Success
-- **Mission Statement**: A mobile web app that captures and organizes links shared from iOS devices using iCloud storage.
-- **Success Indicators**: Number of links saved, frequency of app usage, user return rate.
+- **Mission Statement**: A comprehensive link management system that captures and organizes links across iOS mobile and desktop browsers.
+- **Success Indicators**: Number of links saved, frequency of app usage, cross-device synchronization, user return rate.
 - **Experience Qualities**: Seamless, Organized, Reliable.
 
 ## Project Classification & Approach
 - **Complexity Level**: Light Application (multiple features with basic state)
-- **Primary User Activity**: Creating (saving and organizing links)
+- **Primary User Activity**: Creating (saving and organizing links across devices)
 
 ## Thought Process for Feature Selection
-- **Core Problem Analysis**: iOS users frequently encounter interesting content they want to save while browsing, but native solutions don't provide good organization or cross-device access.
-- **User Context**: Users will engage with this app when they find content they want to save for later, likely while multitasking or browsing on their mobile device.
-- **Critical Path**: User shares a link → App captures and stores link → User can later view, organize, and access saved links
+- **Core Problem Analysis**: Users frequently encounter interesting content they want to save while browsing on both mobile and desktop devices, but native solutions don't provide good organization or cross-device access.
+- **User Context**: Users will engage with this app when they find content they want to save for later, likely while multitasking or browsing on either their mobile device or desktop browser.
+- **Critical Path**: User shares/saves a link → App/Extension captures and stores link → User can later view, organize, and access saved links from any device
 - **Key Moments**: 
-  1. The initial share action and confirmation of successful save
+  1. The initial save action and confirmation of successful save (mobile or desktop)
   2. Discovering and accessing previously saved links in an organized view
+  3. Seamless synchronization between mobile and desktop experiences
 
 ## Essential Features
 1. **Link Capture Mechanism**
-   - What: Integration with iOS share sheet to capture links
-   - Why: Provides seamless integration with iOS browsing experience
-   - Success: Links are properly saved when shared from any iOS app
+   - What: Integration with iOS share sheet and browser extension for desktop browsers
+   - Why: Provides seamless integration across multiple platforms and devices
+   - Success: Links are properly saved when shared from any iOS app or desktop browser
    
 2. **Link Storage and Display**
    - What: Save links with metadata (title, favicon, date) and display in a clean list
@@ -37,6 +38,11 @@
    - What: Ability to share saved links to other apps or export collection
    - Why: Extends usefulness beyond just storage
    - Success: Links can be successfully shared to other applications
+   
+5. **Cross-device Synchronization**
+   - What: Synchronize links and categories across mobile app and browser extension
+   - Why: Ensures a seamless experience regardless of which device is used
+   - Success: Changes made on one platform are reflected on all connected devices
 
 ## Design Direction
 
@@ -112,6 +118,6 @@
 - **Critical Questions**: How to handle authentication and privacy of saved links?
 
 ## Reflection
-- This approach uniquely bridges the gap between native iOS functionality and web app flexibility
+- This approach uniquely bridges the gap between native iOS functionality, web app flexibility, and desktop browser integration
 - We assume users want to organize links rather than just save them in a flat list
-- The exceptional quality would be the seamless integration with iOS sharing system and the elegant organization system
+- The exceptional quality would be the seamless synchronization between mobile and desktop platforms with elegant organization system

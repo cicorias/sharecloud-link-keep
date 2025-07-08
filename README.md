@@ -1,23 +1,54 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# LinkVault
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+A cross-platform solution for saving and organizing links across mobile and desktop devices.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## Features
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+### Mobile App (iOS)
+- Integrate with iOS share sheet for quick link saving
+- Organize links with customizable categories and tags
+- Search and filter your link collection
+- Share saved links to other apps
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+### Desktop Browser Extension
+- Save links directly from your desktop browser
+- One-click saving with the toolbar button
+- Keyboard shortcuts for power users (`Ctrl+Shift+S` or `⌘+Shift+S` on Mac)
+- Automatic sync with the mobile app
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+## Architecture
 
-📄 License For Spark Template Resources 
+LinkVault consists of two main components:
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+1. **Mobile Web App**: A React-based web application optimized for mobile use that integrates with the iOS share sheet
+2. **Browser Extension**: Available for Chrome, Firefox, and Edge to enable desktop integration
+
+## Project Structure
+
+- `/src`: Main React web application
+  - `/api`: API endpoints for browser extension syncing
+  - `/components`: Reusable UI components
+  - `/lib`: Utility functions
+
+- `/extension`: Browser extension files
+  - `/popup`: Extension popup UI
+  - `/background`: Background service worker
+  - `/icons`: Extension icons
+  - `/welcome`: Welcome page shown after installation
+
+## Development
+
+### Running the Web App
+
+```bash
+npm install
+npm run dev
+```
+
+### Building the Browser Extension
+
+See the [extension README](/extension/README.md) for detailed instructions.
+
+## License
+
+Copyright © 2023 LinkVault. All rights reserved.
